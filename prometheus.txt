@@ -1,0 +1,2 @@
+#Exemplo de métrica para ver o tempo que o CPU está ocioso.
+100 - (avg by (instance) (irate(node_cpu_seconds_total{job="ubuntu",mode="idle"}[5m])) * 100)
