@@ -1,0 +1,1 @@
+docker run --name prometheus --privileged --rm -d -p 9090:9090 -v /home/vagrant/config/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
