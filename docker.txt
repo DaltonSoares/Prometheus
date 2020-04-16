@@ -1,1 +1,8 @@
+#Comando usado para instalar o prometheus. 
+#Estou mapeando o arquivo local /home/vagrant/config/prometheus.yml para o arquivo dentro do container /etc/prometheus/prometheus.yml
+#Isso significa que o que eu alterar localment será refletido dentro do container, para isso preciso fazer stop e start no container ou docker reload.
+
 docker run --name prometheus --privileged --rm -d -p 9090:9090 -v /home/vagrant/config/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+
+#Instalando o grafana e mapeando a porta 3000 do container para ser porta 3000 localmente.
+docker run -d --name=grafana -p 3000:3000 grafana/grafana
